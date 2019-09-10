@@ -1,0 +1,22 @@
+{
+    "name": "wunderio/drupal-file-finder",
+    "description": "Finder for ECS.",
+    "type": "library",
+    "require": {
+        "symplify/easy-coding-standard": "^6.0",
+        "symfony/finder": "^4.3",
+        "squizlabs/php_codesniffer": "^3.4"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Guntis",
+            "email": "guntis.jakovins@wunder.io"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Wunderio\\CodingStandards\\": "src/"
+        }
+    }
+}
