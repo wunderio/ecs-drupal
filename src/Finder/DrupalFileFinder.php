@@ -1,8 +1,8 @@
 <?php
 
-namespace Wunderio\CodingStandards;
+namespace Wunderio\CodingStandards\Finder;
 
-use Nette\Utils\Finder;
+use Symfony\Component\Finder\Finder;
 use Symplify\EasyCodingStandard\Contract\Finder\CustomSourceProviderInterface;
 
 final class DrupalFileFinder implements CustomSourceProviderInterface
@@ -13,8 +13,22 @@ final class DrupalFileFinder implements CustomSourceProviderInterface
      */
     public function find(array $source)
     {
-        return Finder::find('*.php', '*.module','*.install','*.inc')
-            ->in($source)
-            ->exclude('vendor');
+        $files = [];
+        foreach ($source as $singleSource) {
+            if (is_file($singleSource)) {
+                $files = $this->processFile($files, $singleSource);
+            } else {
+                $files = Finder::create()->files()
+                    ->name('*.php')
+                    ->name('*.module')
+                    ->name('*.install')
+                    ->name('*.inc')
+                    ->in($singleSource)
+                    ->exclude('vendor')
+                    ->sortByName();
+            }
+        }
+
+        return $files;
     }
 }

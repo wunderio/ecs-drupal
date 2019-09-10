@@ -1,5 +1,5 @@
 {
-    "name": "wunderio/drupal-file-finder",
+    "name": "wunderio/ecs-drupal",
     "description": "Finder for ECS.",
     "type": "library",
     "require": {
