@@ -5,6 +5,7 @@ namespace Wunderio\CodingStandards\Finder;
 use Symfony\Component\Finder\Finder;
 use Symplify\EasyCodingStandard\Contract\Finder\CustomSourceProviderInterface;
 use Symplify\PackageBuilder\FileSystem\FinderSanitizer;
+use Symplify\PackageBuilder\FileSystem\SmartFileInfo;
 
 final class DrupalFileFinder implements CustomSourceProviderInterface {
 
@@ -44,5 +45,16 @@ final class DrupalFileFinder implements CustomSourceProviderInterface {
             }
         }
         return $files;
+    }
+
+    /**
+     * @param array $files
+     * @param string $file
+     * @return array
+     * @throws \Symplify\PackageBuilder\Exception\FileSystem\FileNotFoundException
+     */
+    private function processFile(array $files, $file)
+    {
+        return array_merge($files, [new SmartFileInfo($file)]);
     }
 }
