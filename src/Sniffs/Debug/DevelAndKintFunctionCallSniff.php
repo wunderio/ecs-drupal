@@ -5,11 +5,11 @@ namespace Wunderio\CodingStandards\Sniffs\Debug;
 use PHP_CodeSniffer\Standards\Generic\Sniffs\PHP\ForbiddenFunctionsSniff;
 
 /**
- * Class KintFunctionCallSniff.
+ * Class DevelAndKintFunctionCallSniff.
  *
  * @package Wunderio\CodingStandards\Sniffs
  */
-final class KintFunctionCallSniff extends ForbiddenFunctionsSniff
+final class DevelAndKintFunctionCallSniff extends ForbiddenFunctionsSniff
 {
   /**
    * A list of forbidden functions with their alternatives.
@@ -24,5 +24,14 @@ final class KintFunctionCallSniff extends ForbiddenFunctionsSniff
     'kint_trace' => null,
     'kint_lite' => null,
     'ksm' => null,
+    'dsm' => null,
+    'dpm' => null,
+    'dvm' => null,
+    'dpr' => null,
+    'dvr' => null,
+    'kpr' => null,
+    'dargs' => null,
+    'ddm' => null,
+    'ddebug_backtrace' => null,
   ];
 }
