@@ -3,7 +3,7 @@
     "description": "Finder for ECS.",
     "type": "library",
     "require": {
-        "symplify/easy-coding-standard": "^6.0"
+        "symplify/easy-coding-standard": "^8.3"
     },
     "license": "MIT",
     "authors": [
